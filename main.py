@@ -29,13 +29,8 @@ except Exception as e:
     model = None
     scaler = None
 
-print("model : ", model)
-print("scaler : ", scaler)
-
 @app.get("/")
 def read_root():
-    print("print : test pendant le get")
-    logging.info("log : test pendant le get")
     return {"message": "Hello World!"}
 
 @app.post('/score')
