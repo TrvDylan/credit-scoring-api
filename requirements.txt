@@ -7,3 +7,4 @@ joblib
 imblearn
 python-multipart
 pytest
+httpx
