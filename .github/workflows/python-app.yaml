@@ -63,6 +63,11 @@ jobs:
         run: |
           git status
 
+      # Dénuder le clone (récupérer l'intégralité de l'historique)
+      - name: Unshallow the git repository
+        run: |
+          git fetch --all --unshallow
+
       # Vérifier les changements et effectuer un commit vide si nécessaire
       - name: Check for changes and commit
         run: |
