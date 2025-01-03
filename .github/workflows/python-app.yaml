@@ -53,6 +53,11 @@ jobs:
           password $HEROKU_API_KEY" >> ~/.netrc
           chmod 600 ~/.netrc
 
+      - name: Configure Git identity
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+
       - name: Deploy to Heroku
         run: |
           git init
