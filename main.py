@@ -20,8 +20,7 @@ features = ["SK_ID_CURR","PAYMENT_RATE","EXT_SOURCE_1","EXT_SOURCE_2","EXT_SOURC
 # Création de l'API
 app = FastAPI()
 
-print("Lancement de l'application...")
-logging.log("Lancement de l'application...")
+print("Lancement de l'API")
 
 # Chargement du modele de ML et du scaler avec joblib
 try:
