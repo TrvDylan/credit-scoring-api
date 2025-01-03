@@ -21,6 +21,7 @@ features = ["SK_ID_CURR","PAYMENT_RATE","EXT_SOURCE_1","EXT_SOURCE_2","EXT_SOURC
 app = FastAPI()
 
 print("Lancement de l'application...")
+logging.log("Lancement de l'application...")
 
 # Chargement du modele de ML et du scaler avec joblib
 try:

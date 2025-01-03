@@ -58,10 +58,18 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions@github.com"
 
+      # Débogage : Vérifier l'état des fichiers dans le dépôt
+      - name: Check Git status
+        run: |
+          git status
+
+      # Vérifier les changements et effectuer un commit vide si nécessaire
+      - name: Check for changes and commit
+        run: |
+          git diff --exit-code || git commit --allow-empty -m "Deploying to Heroku"
+
+      # Déployer sur Heroku
       - name: Deploy to Heroku
         run: |
-          git init
           git remote add heroku https://git.heroku.com/trvdln-credit-scoring.git
-          git add .
-          git commit -m "Deploying to Heroku"
           git push -f heroku main
