@@ -42,16 +42,16 @@ jobs:
         run: curl https://cli-assets.heroku.com/install.sh | sh
 
       - name: Login to Heroku
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: |
-        echo "machine api.heroku.com
-        login $HEROKU_API_KEY
-        password $HEROKU_API_KEY" > ~/.netrc
-        echo "machine git.heroku.com
-        login $HEROKU_API_KEY
-        password $HEROKU_API_KEY" >> ~/.netrc
-        chmod 600 ~/.netrc
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        run: |
+          echo "machine api.heroku.com
+          login $HEROKU_API_KEY
+          password $HEROKU_API_KEY" > ~/.netrc
+          echo "machine git.heroku.com
+          login $HEROKU_API_KEY
+          password $HEROKU_API_KEY" >> ~/.netrc
+          chmod 600 ~/.netrc
 
       - name: Deploy to Heroku
         run: |
@@ -60,4 +60,3 @@ jobs:
           git add .
           git commit -m "Deploying to Heroku"
           git push -f heroku main
-
