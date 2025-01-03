@@ -47,9 +47,7 @@ jobs:
         run: heroku auth:token
 
       - name: Deploy to Heroku
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          heroku git:remote -a credit-scoring-api
+          heroku git:remote -a trvdln-credit-scoring
           git push heroku main
 
